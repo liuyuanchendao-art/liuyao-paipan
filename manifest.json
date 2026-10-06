@@ -1,0 +1,16 @@
+{
+  "name": "文王卦·排盘（明易对齐版）",
+  "short_name": "文王卦排盘",
+  "description": "六爻排盘 · 历法/纳甲/六亲/世应/六神/神煞 · 明易对齐",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#e8730c",
+  "theme_color": "#e8730c",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
