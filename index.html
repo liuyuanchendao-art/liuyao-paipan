@@ -209,7 +209,7 @@ function openSheet(i){
 }
 function closeSheet(){document.getElementById("sheet").classList.remove("show");}
 function setYao(i,k){}
-function resetYao(){yaoState=[null,null,null,null,null,null];renderYaoInput();}
+function resetYao(){yaoState=[null,null,null,null,null,null];renderYaoInput();document.getElementById("matter").value="";const n=new Date();n.setMinutes(n.getMinutes()-n.getTimezoneOffset());document.getElementById("dt").value=n.toISOString().slice(0,16);document.getElementById("out").textContent="（填好后点“排盘”）";curText="";curJSON=null;curMD="";}
 
 function render(){
   const dt=document.getElementById("dt").value; if(!dt){alert("请填时间");return;}
@@ -275,8 +275,8 @@ function render(){
   md.push("## 排盘");
   md.push(`- 卦: ${g0.gong}${g0.pos+1}.${g0.name}（世${g0.shi}应${g0.ying}） 之 ${g1.gong}${g1.pos+1}.${g1.name}`);
   md.push(`- 时间: ${ycol}年 ${mcol}月 ${dgz}日 ${hcol}时（${kong}空）｜ 阴历 ${lunarStr(Y,M,D)}`);
-  md.push("- 爻位（初→上）:");
-  for(let pos=0;pos<6;pos++){
+  md.push("- 爻位（自上而下：上爻→初爻，初爻在下）:");
+  for(let pos=5;pos>=0;pos--){
     const y=yao[pos], br=gl0.najia[pos];
     const lq=liuqin2(g0.wx,gzWX(br));
     const shen=LIUSHEN[(lsS+pos)%6];
