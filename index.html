@@ -248,11 +248,11 @@ function render(){
     const lq=liuqin2(g0.wx,gzWX(br));
     const shen=LIUSHEN[(lsS+pos)%6];
     let marker=""; if(g0.shi===pos+1)marker="世"; if(g0.ying===pos+1)marker="应";
-    let line=`${POSN[pos]} ${shen} ${lq}${br}(${nayin(br)})`;
+    let line=`${POSN[pos]} ${shen} ${lq}${br}${gzWX(br)}(${nayin(br)})`;
     if(fu[pos]) line+=`（伏:${fu[pos].lq}${fu[pos].br}(${fu[pos].ny})）`;
     line+="　"+(y.yin?"▬ ▬":"▬▬")+" "+(y.dong?(y.yin?"×":"○"):"　");
     if(marker) line+=" "+marker;
-    if(y.dong){const b1=gl1.najia[pos];line+=` → ${liuqin2(g0.wx,gzWX(b1))}${b1}(${nayin(b1)})`;}
+    if(y.dong){const b1=gl1.najia[pos];line+=` → ${liuqin2(g0.wx,gzWX(b1))}${b1}${gzWX(b1)}(${nayin(b1)})`;}
     out.push(line);
   }
   out.push("");
@@ -281,10 +281,10 @@ function render(){
     const lq=liuqin2(g0.wx,gzWX(br));
     const shen=LIUSHEN[(lsS+pos)%6];
     let mk=""; if(g0.shi===pos+1)mk="【世】"; if(g0.ying===pos+1)mk="【应】";
-    let t=`  - ${POSN[pos]}: ${shen} ${lq}${br}(${nayin(br)})`;
+    let t=`  - ${POSN[pos]}: ${shen} ${lq}${br}${gzWX(br)}(${nayin(br)})`;
     if(fu[pos]) t+=`（伏:${fu[pos].lq}${fu[pos].br}(${fu[pos].ny})）`;
     t+=mk;
-    if(y.dong){const b1=gl1.najia[pos];t+=` 【动】→ ${liuqin2(g0.wx,gzWX(b1))}${b1}(${nayin(b1)})`;}
+    if(y.dong){const b1=gl1.najia[pos];t+=` 【动】→ ${liuqin2(g0.wx,gzWX(b1))}${b1}${gzWX(b1)}(${nayin(b1)})`;}
     md.push(t);
   }
   md.push(`- 实占神煞: 卦身${gs} 香闺${wxGroup(keWX(gswx))} 床帐${wxGroup(shengWX(gswx))} 驿马${ss.驿马} 桃花${ss.桃花} 华盖${ss.华盖} 贵人${ss.贵人} 天禄${ss.天禄} 天喜${ss.天喜} 天医${ss.天医} 文昌${ss.文昌} 劫煞${ss.劫煞} 灾煞${ss.灾煞} 金舆${ss.金舆} 亡神${ss.亡神} 将星${ss.将星} 羊刃${ss.羊刃} 谋星${ss.谋星} 往亡煞${ss.往亡煞}`);
