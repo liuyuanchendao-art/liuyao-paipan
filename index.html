@@ -249,7 +249,7 @@ function render(){
     const shen=LIUSHEN[(lsS+pos)%6];
     let marker=""; if(g0.shi===pos+1)marker="世"; if(g0.ying===pos+1)marker="应";
     let line=`${POSN[pos]} ${shen} ${lq}${br}${gzWX(br)}(${nayin(br)})`;
-    if(fu[pos]) line+=`（伏:${fu[pos].lq}${fu[pos].br}(${fu[pos].ny})）`;
+    if(fu[pos]) line+=`（伏:${fu[pos].lq}${fu[pos].br}${gzWX(fu[pos].br)}(${fu[pos].ny})）`;
     line+="　"+(y.yin?"▬ ▬":"▬▬")+" "+(y.dong?(y.yin?"×":"○"):"　");
     if(marker) line+=" "+marker;
     if(y.dong){const b1=gl1.najia[pos];line+=` → ${liuqin2(g0.wx,gzWX(b1))}${b1}${gzWX(b1)}(${nayin(b1)})`;}
@@ -282,7 +282,7 @@ function render(){
     const shen=LIUSHEN[(lsS+pos)%6];
     let mk=""; if(g0.shi===pos+1)mk="【世】"; if(g0.ying===pos+1)mk="【应】";
     let t=`  - ${POSN[pos]}: ${shen} ${lq}${br}${gzWX(br)}(${nayin(br)})`;
-    if(fu[pos]) t+=`（伏:${fu[pos].lq}${fu[pos].br}(${fu[pos].ny})）`;
+    if(fu[pos]) t+=`（伏:${fu[pos].lq}${fu[pos].br}${gzWX(fu[pos].br)}(${fu[pos].ny})）`;
     t+=mk;
     if(y.dong){const b1=gl1.najia[pos];t+=` 【动】→ ${liuqin2(g0.wx,gzWX(b1))}${b1}${gzWX(b1)}(${nayin(b1)})`;}
     md.push(t);

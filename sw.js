@@ -2,7 +2,7 @@
  * 缓存优先（cache-first）：页面纯静态，算法全在 index.html 内，离线可完整排盘。
  * 更新方式：页面或资源变更时，把 VERSION 递增（如 v2），旧缓存自动清理。
  */
-const VERSION = 'v3';
+const VERSION = 'v4';
 const CACHE = 'liuyao-paipan-' + VERSION;
 const ASSETS = [
   './',
